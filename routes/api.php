@@ -1,18 +1,9 @@
 <?php
 
+use App\Item;
 use Illuminate\Http\Request;
 
-/*
-|--------------------------------------------------------------------------
-| API Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register API routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| is assigned the "api" middleware group. Enjoy building your API!
-|
-*/
-
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+Route::get('items', function (){
+ Item::all();
+ return ['nama : apel', 'harga : 1000','deskripsi : buah ini mengandung vitamin A', 'stok : 10 buah',' ', 'nama : jeruk', 'harga : 2000','deskripsi : buah ini mengandung vitamin C', 'stok : 11 buah',' ','nama : mangga', 'harga : 3000','deskripsi : buah ini mengandung vitamin C', 'stok : 12 buah'];
 });
